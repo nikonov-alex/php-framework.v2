@@ -1,0 +1,28 @@
+{
+    "name": "nikonov-alex/framework",
+	"description": "PHP framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "NikonovAlex\\Framework\\": "src/"
+        },
+		"files": [
+			"src/Web.php",
+			"src/Routing.php"
+		]
+    },
+    "authors": [
+        {
+            "name": "Nikonov Aleksander",
+            "email": "nikonov.personal.mail@gmail.com"
+        }
+    ],
+	"repositories": [
+		{
+		  "type": "vcs",
+		  "url": "https://github.com/nikonov-alex/php-framework.v2.git"
+		}
+	],
+    "require": {}
+}
