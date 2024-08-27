@@ -24,5 +24,7 @@
 		  "url": "https://github.com/nikonov-alex/php-framework.v2.git"
 		}
 	],
-    "require": {}
+    "require": {
+		"php": ">=5",
+	}
 }
