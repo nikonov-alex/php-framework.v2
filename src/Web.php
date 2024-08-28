@@ -4,7 +4,7 @@ namespace NikonovAlex\Framework\Web;
 use \NikonovAlex\Framework\HTTP;
 
 /**
- * @return \NikonovAlex\Framework\HTTP\Request
+ * @return HTTP\Request
  */
 function makeRequest(): HTTP\Request {
 	return new HTTP\Request(
@@ -16,7 +16,7 @@ function makeRequest(): HTTP\Request {
 }
 
 /**
- * @param \NikonovAlex\Framework\HTTP\Response $response
+ * @param HTTP\Response $response
  * @return void
  */
 function printResponse( HTTP\Response $response ): void {
@@ -28,7 +28,7 @@ function printResponse( HTTP\Response $response ): void {
 }
 
 /**
- * @psalm-type RequestHandler = callable(\NikonovAlex\Framework\HTTP\Request): \NikonovAlex\Framework\HTTP\Response
+ * @psalm-type RequestHandler = callable(HTTP\Request): HTTP\Response
  * @param RequestHandler $requestHandler
  * @return void
  */
