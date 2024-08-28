@@ -12,9 +12,9 @@ use \NikonovAlex\Framework\HTTP;
  * @param \NikonovAlex\Framework\HTTP\Request $request
  * @return \NikonovAlex\Framework\HTTP\Response
  */
-function matchRoute( $router, $request ) {
-	return array_key_exists( $request->path(), $router )
-		&& array_key_exists( $request->method(), $router[$request->path()] )
-		? $router[$request->path()][$request->method()]( $request )
+function matchRoute( array $router, HTTP\Request $request ): HTTP\Response {
+	return array_key_exists( $request->path, $router )
+		&& array_key_exists( $request->method, $router[$request->path] )
+		? $router[$request->path][$request->method]( $request )
 		:  new HTTP\Response( 404 );
 }

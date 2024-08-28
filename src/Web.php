@@ -6,7 +6,7 @@ use \NikonovAlex\Framework\HTTP;
 /**
  * @return \NikonovAlex\Framework\HTTP\Request
  */
-function makeRequest() {
+function makeRequest(): HTTP\Request {
 	return new HTTP\Request(
 		parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ),
 		$_SERVER['REQUEST_METHOD'],
@@ -19,12 +19,12 @@ function makeRequest() {
  * @param \NikonovAlex\Framework\HTTP\Response $response
  * @return void
  */
-function printResponse( $response ) {
-	http_response_code( $response->status() );
-	foreach ( $response->headers() as $name => $value ) {
+function printResponse( HTTP\Response $response ): void {
+	http_response_code( $response->status );
+	foreach ( $response->headers as $name => $value ) {
 		header( "$name:$value" );
 	}
-	echo $response->body();
+	echo $response->body;
 }
 
 /**
@@ -32,7 +32,7 @@ function printResponse( $response ) {
  * @param RequestHandler $requestHandler
  * @return void
  */
-function handleRequest( $requestHandler ) {
+function handleRequest( callable $requestHandler ): void {
 	printResponse(
 		$requestHandler(
 			makeRequest()));
